@@ -1,11 +1,13 @@
 from pathlib import Path
 import os
 from dotenv import load_dotenv
+from django.core.management.utils import get_random_secret_key
 
 load_dotenv(override=True)
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# SECRET_KEY = get_random_secret_key()
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 DEBUG = os.getenv('DEBUG') == 'True'
